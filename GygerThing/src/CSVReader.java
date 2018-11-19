@@ -10,7 +10,7 @@ public class CSVReader {
 		String fileName = ("C:\\Users\\Lorenzo\\Desktop\\141 Project Geiger\\GygerThing\\Supp Docs\\7_04_18.csv");
 		File file = new File(fileName);
 		//Declare arrat list to store data
-		ArrayList<Object> listOfCounts = new ArrayList(102317);
+		ArrayList listOfCounts = new ArrayList();
 		//ArrayList<Object> listOfCounts = new ArrayList(102317);
 		//ArrayList listOfDates = new ArrayList(102317);
 		//ArrayList listOfTimes = new ArrayList(102317);
@@ -38,18 +38,19 @@ public class CSVReader {
 		}
 		//display(listOfCounts);
 		noDupes(listOfCounts);
-		
 	}
-	public static void display(ArrayList<Object> cpm) {
+	public static void display(ArrayList cpm) {
 		for (int i = 0; i < cpm.size(); ++i)
 			System.out.println(cpm.get(i) + "\n");
 	}
 	public static void noDupes(ArrayList<Object> cpm){
-		int j = 0;
 		int i = 0;
-		for (int helper = 0; helper < 102316; ++helper, ++i)
-			if(cpm.get(i)!=cpm.get(i+1))
-			System.out.println(cpm.get(i));
+		int j = 0;
+		for (int helper = 0; helper < cpm.size(); ++helper, ++i)
+			for (int helper1 = 0; helper1 < cpm.size(); ++helper1, ++j)
+				System.out.println(cpm.get(helper)+ " " + cpm.get(helper1));
+		
+				
 	}
 }
 
