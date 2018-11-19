@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.*;
 
 
+
 public class CSVReader {
 
 	public static void main(String[] args) {
@@ -10,9 +11,10 @@ public class CSVReader {
 		File file = new File(fileName);
 		//Declare arrat list to store data
 		ArrayList<Object> listOfCounts = new ArrayList(102317);
-		ArrayList listOfDates = new ArrayList(102317);
-		ArrayList listOfTimes = new ArrayList(102317);
-		ArrayList listOfOccurance = new ArrayList(102317);
+		//ArrayList<Object> listOfCounts = new ArrayList(102317);
+		//ArrayList listOfDates = new ArrayList(102317);
+		//ArrayList listOfTimes = new ArrayList(102317);
+		//ArrayList listOfOccurance = new ArrayList(102317);
 		
 		try {
 			Scanner inputStream = new Scanner(file);
@@ -21,9 +23,9 @@ public class CSVReader {
 			while(inputStream.hasNext()) {
 				String data = inputStream.nextLine();
 				String[] values = data.split(",");
-				listOfDates.add(values[0]);
-				listOfTimes.add(values[1]);
-				listOfOccurance.add(values[2]);
+				//listOfDates.add(values[0]);
+				//listOfTimes.add(values[1]);
+				//listOfOccurance.add(values[2]);
 				listOfCounts.add(values[3]);
 				double CountsPerMinute = Double.parseDouble(values[3]);
 				total += CountsPerMinute;
@@ -44,9 +46,10 @@ public class CSVReader {
 	}
 	public static void noDupes(ArrayList<Object> cpm){
 		int j = 0;
-		for (int i = 0; i < cpm.size(); ++i)
-			//for (j = cpm.get(i); j < cpm.size(); ++j)
-				
+		int i = 0;
+		for (int helper = 0; helper < 102316; ++helper, ++i)
+			if(cpm.get(i)!=cpm.get(i+1))
+			System.out.println(cpm.get(i));
 	}
 }
 
