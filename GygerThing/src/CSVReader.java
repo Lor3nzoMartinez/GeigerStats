@@ -43,10 +43,10 @@ public class CSVReader {
 			System.out.println(dates.get(listOfCounts.get(x))+ "               " +cpm.get(listOfCounts.get(x)));	
 					
 	}
-	public static void graph(ArrayList cpm, ArrayList date) {                 // work onme
-		System.out.print(cpm.size());
-		for (int x = 0; x < date.size(); x++)
-			System.out.print(x);
+	public static void graph(ArrayList cpm, ArrayList date) {                 
+		String barGraph = "+++++++++++++++++++++++++++++++++++++";
+		for (int counter = 0; counter < cpm.size(); counter++)
+			System.out.println(barGraph.substring(0,(int) cpm.get(counter)));
 	}
 }
 
