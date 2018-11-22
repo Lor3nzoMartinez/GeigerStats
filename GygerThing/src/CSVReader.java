@@ -24,7 +24,7 @@ public class CSVReader {
 			System.out.println("Wrong file path!");
 		}
 		withinFive(listOfCounts, listOfDates);
-		//graph(listOfCounts,listOfDates);
+		graph(listOfCounts,listOfDates);
 	}
 	public static void withinFive(ArrayList<Integer> cpm, ArrayList<String> dates){
 		ArrayList<Integer> listOfCounts = new ArrayList();
@@ -37,16 +37,16 @@ public class CSVReader {
 				if (cpm.get(counter) == highest-helper) {
 					listOfCounts.add(counter);
 				}	
-		System.out.println("Date                  Count");
-		System.out.println("---------------------------");
+		System.out.println("  Date                 Count");
+		System.out.println(" ___________________________");
 		for (int x = 0; x < listOfCounts.size(); x++)
-			System.out.println(dates.get(listOfCounts.get(x))+ "               " +cpm.get(listOfCounts.get(x)));	
+			System.out.println(" " +dates.get(listOfCounts.get(x))+ "               " +cpm.get(listOfCounts.get(x)));	
 					
 	}
 	public static void graph(ArrayList cpm, ArrayList date) {                 
-		String barGraph = "+++++++++++++++++++++++++++++++++++++";
+		String barGraph = "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b";
 		for (int counter = 0; counter < cpm.size(); counter++)
-			System.out.println(barGraph.substring(0,(int) cpm.get(counter)));
+			System.out.println(" " +barGraph.substring(0,(int) cpm.get(counter)) + " " +cpm.get(counter));
 	}
 }
 
